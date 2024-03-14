@@ -49,3 +49,16 @@ header .headerSearch .search .searchIcon {
   opacity: 0.5;
   font-size: 30px !important;
 }
+
+header .countryWrapper .selectDropWrapper {
+  width: 200px !important;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding-left: 10px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+header .countryWrapper .selectDropWrapper .openSelect {
+  width: 100%;
+}
