@@ -4,6 +4,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import Select from "../selectDrop/Select";
 import Logo from "../../assets/images/logo.svg";
 import axios from "axios";
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import IconCompare from "../../assets/images/icon-compare.svg";
+import IconWishlest from "../../assets/images/icon-heart.svg";
+import IconCart from "../../assets/images/icon-cart.svg";
+import IconAccount from "../../assets/images/icon-user.svg";
 
 const Header = () => {
   const [categories, setCategories] = useState([
@@ -49,14 +54,18 @@ const Header = () => {
     <>
       <header>
         <div className="container-fluid">
-          <div className="row">
+          <div className="row d-flex align-items-center">
             <div className="col-sm-2">
               <img src={Logo} />
             </div>
             {/* headerSearch Start here */}
             <div className="col-sm-5">
               <div className="headerSearch d-flex  align-items-center">
-                <Select data={categories} placeholder={"All Categories"} />
+                <Select
+                  data={categories}
+                  placeholder={"All Categories"}
+                  icon={false}
+                />
 
                 <div className="search">
                   <input type="text" placeholder="Search for items..." />
@@ -68,8 +77,53 @@ const Header = () => {
             {/* headerSearch Start here */}
 
             <div className=" col-sm-5 d-flex align-items-center">
-              <div className="countryWrapper">
-                <Select data={countryList} placeholder={"Your Location"} />
+              <div className=" ml-auto d-flex align-items-center">
+                <div className="countryWrapper">
+                  <Select
+                    data={countryList}
+                    placeholder={"Your Location"}
+                    icon={<LocationOnOutlinedIcon style={{ opacity: "0.5" }} />}
+                  />
+                </div>
+
+                <ul className=" list list-inline mb-0 headerTabs">
+                  <li className=" list-inline-item">
+                    <span>
+                      <img src={IconCompare} />
+                      <span className=" badge bg-success rounded-circle">
+                        3
+                      </span>
+                      Compare
+                    </span>
+                  </li>
+
+                  <li className=" list-inline-item">
+                    <span>
+                      <img src={IconWishlest} />
+                      <span className=" badge bg-success rounded-circle">
+                        6
+                      </span>
+                      Wishlist
+                    </span>
+                  </li>
+
+                  <li className=" list-inline-item">
+                    <span>
+                      <img src={IconCart} />
+                      <span className=" badge bg-success rounded-circle">
+                        2
+                      </span>
+                      Cart
+                    </span>
+                  </li>
+
+                  <li className=" list-inline-item">
+                    <span>
+                      <img src={IconAccount} />
+                      Account
+                    </span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

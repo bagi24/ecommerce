@@ -54,11 +54,48 @@ header .countryWrapper .selectDropWrapper {
   width: 200px !important;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding-left: 10px;
-  height: 45px;
+  height: 50px;
   display: flex;
   align-items: center;
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 header .countryWrapper .selectDropWrapper .openSelect {
   width: 100%;
+}
+
+header .countryWrapper .selectDropWrapper .selectDrop {
+  left: 0px !important;
+}
+
+header .countryWrapper .openSelect {
+  color: #279a65 !important;
+}
+
+header .headerTabs {
+  padding-left: 40px;
+}
+header .headerTabs li {
+  position: relative;
+  margin-left: 20px;
+}
+
+header .headerTabs li span {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+header .headerTabs li span img {
+  margin-right: 10px;
+}
+
+header .headerTabs li span .badge {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+  font-weight: 400;
+  position: absolute;
+  top: -16px;
+  left: 10px;
 }
