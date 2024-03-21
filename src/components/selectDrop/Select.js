@@ -9,6 +9,9 @@ const Select = ({ data, placeholder, icon }) => {
 
   const [selectedItem, setSelectedItem] = useState(placeholder);
 
+  const [listData, setListData] = useState(data);
+  const [listData2, setListData2] = useState(data);
+
   const openSelect = () => {
     setIsOpenSelect(!isOpenSelect);
   };
@@ -19,12 +22,29 @@ const Select = ({ data, placeholder, icon }) => {
     setSelectedItem(name);
   };
 
+  const filterList = (e) => {
+    const keyword = e.target.value.toLowerCase();
+    // console.log(keyword);
+
+    const list = listData2.filter((item) => {
+      return item.toLowerCase().includes(keyword);
+    });
+
+    // console.log(list);
+    const list2 = list.filter((item, index) => list.indexOf(item) === index);
+
+    setListData(list2);
+  };
+
   return (
     <ClickAwayListener onClickAway={() => setIsOpenSelect(false)}>
       <div className="selectDropWrapper cursor position-relative">
         {icon}
         <span onClick={openSelect} className="openSelect">
-          {selectedItem} <KeyboardArrowDownIcon className="arrow" />
+          {selectedItem.length > 14
+            ? selectedItem.substr(0, 14) + "..."
+            : selectedItem}{" "}
+          <KeyboardArrowDownIcon className="arrow" />
         </span>
 
         {isOpenSelect === true && (
@@ -44,7 +64,7 @@ const Select = ({ data, placeholder, icon }) => {
               >
                 {placeholder}
               </li>
-              {data.map((item, index) => {
+              {listData.map((item, index) => {
                 return (
                   <li
                     key={index + 1}
