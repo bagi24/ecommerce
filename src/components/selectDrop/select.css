@@ -3,10 +3,11 @@
   height: auto;
   background: #fff;
   position: absolute;
-  top: 100%;
+  top: 110%;
   left: -15px;
   z-index: 100;
-  box-shadow: 0 3px 6px rgb(0 0 0 / 20%);
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
   padding: 15px;
 }
 
