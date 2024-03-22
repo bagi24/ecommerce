@@ -110,6 +110,7 @@ header .headerTabs li span .badge {
   -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
   padding: 10px 0px;
+  z-index: 100;
 }
 
 .dropDownMenu li {
@@ -124,7 +125,7 @@ header .headerTabs li span .badge {
   justify-content: flex-start !important;
   color: rgba(0, 0, 0, 0.7) !important;
   text-transform: capitalize !important;
-  font-size: 16px !important;
+  font-size: 18px !important;
   padding: 12px 15px !important;
 }
 

@@ -173,6 +173,8 @@ const Header = () => {
           </div>
         </div>
       </header>
+
+      <Nav />
     </>
   );
 };
