@@ -25,7 +25,7 @@
 .nav nav ul li button a {
   text-decoration: none !important;
   color: rgba(0, 0, 0, 0.8) !important;
-  font-size: 20px;
+  font-size: 21px !important;
 }
 
 .nav .part3 .phNo svg {

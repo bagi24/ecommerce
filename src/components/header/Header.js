@@ -3,7 +3,7 @@ import "./header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import Select from "../selectDrop/Select";
 import Logo from "../../assets/images/logo.svg";
-import axios from "axios";
+import { default as axios } from "axios";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import IconCompare from "../../assets/images/icon-compare.svg";
 import IconWishlest from "../../assets/images/icon-heart.svg";
