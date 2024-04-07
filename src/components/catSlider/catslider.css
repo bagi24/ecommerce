@@ -8,9 +8,11 @@
 
 .cat_slider_Main .item {
   height: auto;
-  background: #f4f6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0px;
   cursor: pointer;
-  padding: 15px;
 }
 
 .cat_slider_Main .item .info {
@@ -19,6 +21,9 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 15px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
 }
 
 .cat_slider_Main .item .info h5 {
@@ -32,18 +37,54 @@
   margin-bottom: 0px;
 }
 
-//ragaca shecdomaa ar chans displayze isrebis swori ganlageba
+.cat_slider_Main .slick-next {
+  top: -50px !important;
+  right: 15px !important;
+  background: red;
+}
+.cat_slider_Main .slick-prev {
+  top: -50px !important;
+  right: 100px !important;
+  left: inherit !important;
+  background: red;
+}
+
+.slick-active button::before {
+  color: #3bb77e !important;
+}
+
+.cat_slider_Main .slick-prev::before {
+  content: "\f177" !important;
+  font-family: FontAwesome !important;
+  font-size: 30px;
+  color: #000 !important;
+}
+
+.cat_slider_Main .slick-next::before {
+  content: "\f178" !important;
+  font-family: FontAwesome !important;
+  font-size: 30px;
+  color: #000 !important;
+}
+
+.cat_slider_Main .slick-arrow:hover {
+  background: #3bb77e !important;
+}
 
 .cat_slider_Main .slick-arrow {
   zoom: 80%;
+  position: absolute;
+  top: 47%;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  background: #f2f3f4 !important;
+  z-index: 100;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.cat_slider_Main .slick-arrow .slick-next {
-  top: -50px !important;
-  right: 100px !important;
-}
-.cat_slider_Main .slick-arrow .slick-prev {
-  top: -50px !important;
-  right: 80px !important;
-  left: inherit !important;
+.cat_slider_Main .item:hover .info {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: scale(1.1);
 }

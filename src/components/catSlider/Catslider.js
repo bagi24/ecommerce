@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "./catslider.css";
 
 const Catslider = () => {
+  const [itemBg, setItemBg] = useState([
+    "#F4F6FA",
+    "#ecffec",
+    "#feefea",
+    "#fff3eb",
+    "#fff3ff",
+    "#f2fce4",
+    "#feefea",
+    "#fffceb",
+    "#feefea",
+    "#ecffec",
+    "#feefea",
+    "#fff3eb",
+    "#fff3ff",
+    "#f2fce4",
+    "#feefea",
+    "#fffceb",
+    "#feefea",
+    "#ecffec",
+  ]);
+
   var settings = {
     dots: false,
     infinite: true,
@@ -16,17 +37,27 @@ const Catslider = () => {
   return (
     <>
       <div className="catSliderSection">
-        <div className=" container-fluid">
+        <div className=" container-fluid ">
           <h2 className="hd"> Featured Categories</h2>
-          <Slider {...settings} className="cat_slider_Main">
-            <div className="item">
-              <div className="info">
-                <img src="https://wp.alithemes.com/html/nest/demo/assets/imgs/shop/cat-13.png" />
-                <h5>Cake & Milk</h5>
-                <p>26 items</p>
-              </div>
-            </div>
-            <div className="item">
+          <Slider
+            {...settings}
+            className="cat_slider_Main"
+            id="cat_slider_Main"
+          >
+            {itemBg.length !== 0 &&
+              itemBg.map((item, index) => {
+                return (
+                  <div className="item">
+                    <div className="info" style={{ background: item }}>
+                      <img src="https://wp.alithemes.com/html/nest/demo/assets/imgs/shop/cat-13.png" />
+                      <h5>Cake & Milk</h5>
+                      <p>26 items</p>
+                    </div>
+                  </div>
+                );
+              })}
+
+            {/* <div className="item">
               {" "}
               <div className="info">
                 <img src="https://wp.alithemes.com/html/nest/demo/assets/imgs/shop/cat-12.png" />
@@ -105,11 +136,11 @@ const Catslider = () => {
                 <h5>Headphone</h5>
                 <p>87 items</p>
               </div>
-            </div>
+            </div> */}
           </Slider>
         </div>
       </div>
-      <br /> <br /> <br /> <br /> <br /> <br />
+      <br /> <br />
     </>
   );
 };
